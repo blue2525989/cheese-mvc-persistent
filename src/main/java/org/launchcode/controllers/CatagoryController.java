@@ -4,7 +4,6 @@ import javax.validation.Valid;
 
 import org.launchcode.models.Catagory;
 import org.launchcode.models.Cheese;
-import org.launchcode.models.CheeseType;
 import org.launchcode.models.data.CatagoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
