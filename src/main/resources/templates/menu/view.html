@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 <br/><br/>
-    <a href="/cheese/add">Add</a> |
-    <a href="/cheese/remove">Remove</a>
+    <a href="/menu/add">Add</a>
 <br/><br/>
-<p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
+<p th:unless="${menu.cheeses} and ${menu.cheeses.size()}">no cheese-e poof :(</p>
 
 
-<table class="table">
+<table class="table" th:if="${menu.cheeses} and ${menu.cheeses.size()}">
 
     <tr>
         <th>Name</th>
@@ -22,13 +20,13 @@
         <th>Type</th>
     </tr>
 
-    <tr th:each="cheese : ${cheeses}">
+    <tr th:each="cheese : ${menu.cheeses}">
         <td th:text="${cheese.name}"></td>
         <td th:text="${cheese.description}"></td>
         <td th:text="${cheese.category.name}"></td>
     </tr>
 
 </table>
-
+	<p><a th:href="'/menu/add-item/' + ${menu.id}">Add Cheese</a></p>
 </body>
 </html>

@@ -25,14 +25,17 @@ public class Catagory {
 	
 	@OneToMany
 	@JoinColumn(name = "category_id")
-	private List<Cheese> cheese = new ArrayList<>();
+	private List<Cheese> cheeses  = new ArrayList<>();;
+
+	
+	public Catagory () {}
+	
+	public Catagory (String name) {
+		setName(name);
+	}
 	
 	public int getId() {
 		return this.id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	public String getName() {
@@ -43,10 +46,8 @@ public class Catagory {
 		this.name = name;
 	}
 	
-	public Catagory () {}
-	
-	public Catagory (String name) {
-		setName(name);
-	}
+	public List<Cheese> getCheeses() {
+        return cheeses;
+    }
 
 }

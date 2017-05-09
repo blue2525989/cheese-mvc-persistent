@@ -6,7 +6,10 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
-
+<br/><br/>
+    <a href="/cheese/add">Add</a> |
+    <a href="/cheese/remove">Remove</a>
+<br/><br/>
 <form method="post">
 
     <div th:each="cheese : ${cheeses}" class="checkbox">
