@@ -1,6 +1,5 @@
 package org.launchcode.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -32,9 +31,8 @@ public class Cheese {
     @ManyToOne
     private Catagory category;
     
-    // last thing added. about 1/4 down page
     @ManyToMany(mappedBy = "cheeses")
-    public List<Menu> menus;
+    private List<Menu> menus;
 
     public Cheese(String name, String description) {
         this.name = name;

@@ -12,14 +12,15 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Menu {
+
+	@NotNull
+	@Size(min = 3, max = 15)
+	private String name;
 	
 	@Id
     @GeneratedValue
 	private int id;
 	
-	@NotNull
-	@Size(min = 3, max = 16)
-	private String name;
 	
 	@ManyToMany
 	List<Cheese> cheeses = new ArrayList<>();
@@ -36,10 +37,6 @@ public class Menu {
 	
 	public String getName() {
 		return this.name;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	public int getId() {

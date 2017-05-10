@@ -75,8 +75,11 @@ public class MenuController {
     		Iterable<Cheese> cheeses = cheeseDao.findAll();
         	AddMenuItemForm form = new AddMenuItemForm(menu, cheeses);
         	model.addAttribute("form", form);
+        	
         	// test to see about getting the id
         	model.addAttribute("mnId1", menu.getId());
+        	// end test
+        	
         	model.addAttribute("title", "Add item to menu: " + menu.getName());
         	return "menu/add-item";
     	}
@@ -85,7 +88,7 @@ public class MenuController {
     	}
     }
     
-    @RequestMapping(value = "add-item", method = RequestMethod.POST)
+    @RequestMapping(value = "add-item/{menuId}", method = RequestMethod.POST)
     public String addItem(@ModelAttribute @Valid AddMenuItemForm form, Errors errors, Model model) {
     	if (errors.hasErrors()) {
         	model.addAttribute("form", form);

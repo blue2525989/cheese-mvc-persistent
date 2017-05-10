@@ -1,6 +1,5 @@
 package org.launchcode.models.forms;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 import org.launchcode.models.Cheese;
@@ -26,7 +25,7 @@ public class AddMenuItemForm {
 	}
 
 	public Menu getMenu() {
-	    return this.menu;
+	    return menu;
 	}
 
 	public void setMenu(Menu menu) {
@@ -34,7 +33,7 @@ public class AddMenuItemForm {
 	}
 
 	public Iterable<Cheese> getCheeses() {
-	    return this.cheeses;
+	    return cheeses;
 	}
 
 	public void setCheeses(Iterable<Cheese> cheeses) {
@@ -50,7 +49,7 @@ public class AddMenuItemForm {
 	}
 
 	public int getCheeseId() {
-	    return this.cheeseId;
+	    return cheeseId;
 	}
 
 	public void setCheeseId(int cheeseId) {
